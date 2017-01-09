@@ -1,0 +1,67 @@
+
+
+
+
+#2017-01-09
+Window 환경에서 GIT을 설치하고 직접 파일도 올려봤다.
+
+[작업정보]
+rbflwb : https://github.com/rbflrbfl00/myWorkBook.git 
+
+[주요메소드]
+** init관련 **
+- 이름등록 >> git config --global user.name
+- 메일등록 >> git config --global user.email "메일 주소"
+(최초1회만 진행하면 됩니다.)
+
+** 설정관련 **
+- 현재 폴더를 git 로컬저장소로 등록하기  >> git init
+(주의사항 : 폴더 이동을 해주어야하므로 그냥 그 폴더 들어가서 마우스 우클릭 > git bash할 것)
+- 설정확인 >> git config --list
+
+** 원격저장소 추가하기 **
+- 저장된 원격저장소 확인 >> git remote
+- 원격저장소 추가 >> git remote add [단축이름] [url]
+
+** 기본사용 **
+- 현재상태확인 >> git statues
+- 파일 index >> git add (파일명.확장자) 
+(참고 : git add . => 모든 파일 인덱싱)
+- commit 하기 >> git commit -m 'initl commit'
+- push 하기 (원격저장소에 넣기) >> git push [단축이름] [브래치이름]
+- 잘올라가있는지 확인해보기
+
+**주의 **
+UTF-8 >> git config --global core.autocrlf input
+
+
+
+
+[참고링크]
+기준 : http://freeprog.tistory.com/72
+참고 : https://git-scm.com/book/ko/v1/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EC%A0%80%EC%9E%A5%EC%86%8C#%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0
+init 커밋 에러발생시 > http://noritersand.tistory.com/189
+원격 저장소 url 변경 > http://minsone.github.io/git/github-managing-remotes-changing-a-remotes-url
+pull 에러(첫프로젝트에서 커밋안될때 ) > http://cpdev.tistory.com/51
+충돌처리 > http://statkclee.github.io/xwmooc-sc/novice/git/03-conflict.html
+---------------------------------------
+$ git add .
+$ git pull rbflwb master --allow-unrelated-histories
+메세지남기고 :x
+$ git push -u rbflwb master
+=>
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 620 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/rbflrbfl00/myWorkBook.git
+   c7b2505..5a3c350  master -> master
+Branch master set up to track remote branch master from rbflwb.
+(감격)
+
+------------------------------------
+#항상 인덱스를 먹여야 commit 할 수 있다
+#git add (파일명.확장자)
+#git status
+# 프로젝트 시작할때마다, git pull 실행하여, 변경사항 가져오자!!!
