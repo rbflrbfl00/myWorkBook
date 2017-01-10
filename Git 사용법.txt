@@ -25,6 +25,7 @@ rbflwb : https://github.com/rbflrbfl00/myWorkBook.git
 
 ** 기본사용 **
 - 현재상태확인 >> git statues
+- 문자열변경 >> git config --global core.autocrlf input
 - 파일 index >> git add (파일명.확장자) 
 (참고 : git add . => 모든 파일 인덱싱)
 - commit 하기 >> git commit -m 'initl commit'
