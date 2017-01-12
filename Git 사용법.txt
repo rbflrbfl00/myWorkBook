@@ -32,6 +32,13 @@ rbflwb : https://github.com/rbflrbfl00/myWorkBook.git
 - push 하기 (원격저장소에 넣기) >> git push [단축이름] [브래치이름]
 - 잘올라가있는지 확인해보기
 
+
+** git 로컬내용 덮어쓰기 **
+$ git fetch --all
+$ git reset --hard rbflwb/master
+# git reset --hard [단축이름]/[브랜치이름]
+
+
 **주의 **
 UTF-8 >> git config --global core.autocrlf input
 
