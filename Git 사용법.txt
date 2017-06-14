@@ -29,7 +29,7 @@ rbflwb : https://github.com/rbflrbfl00/myWorkBook.git
 - 파일 index >> git add (파일명.확장자) 
 (참고 : git add . => 모든 파일 인덱싱)
 - commit 하기 >> git commit -m 'initl commit'
-- push 하기 (원격저장소에 넣기) >> git push [단축이름] [브래치이름]
+- push 하기 (원격저장소에 넣기) >> git push [단축이름] [브랜치이름]
 - 잘올라가있는지 확인해보기
 
 
@@ -73,3 +73,10 @@ Branch master set up to track remote branch master from rbflwb.
 #git add (파일명.확장자)
 #git status
 # 프로젝트 시작할때마다, git pull 실행하여, 변경사항 가져오자!!!
+
+
+--------------
+
+git add --all 	변동이 일어난 경로나 파일을 탐색해 추가시킨다. all 앞에 -가 2개 있다.
+git commit -m "내용" 	어떤 내용이 변경됐는지 그 내용을 적을 수 있다.
+git push -u origin master 	실제 홈페이지 상에 업로드한다. -u 부분은 빼도 작동한다. 

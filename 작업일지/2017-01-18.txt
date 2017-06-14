@@ -1,0 +1,69 @@
+
+1. 
+[기부금등록]
+- 비목코드 * / 비목명 추가
+- 넘길때 도 *
+
+
+1) A_CONT_INOUT 테이블에 비목코드가 없습니다.
+
+alter table  NKRF.A_CONT_INOUT drop(CD_DETAIL);
+
+UPDATE A_CONT_INOUT
+SET CD_DETAIL ='*'
+WHERE 1=1
+
+
+alter table NKRF.A_CONT_INOUT modify(CD_DETAIL varchar(10) NOT NULL);
+
+SC에 예산/비목값 왜 없는지 확인 << 여기하고있음
+
+
+2. 
+북한 insert쿼리문
+- H_EVA_TOTAL
+- D:\rbfl\02_Doc (문서)\01_개발\98.유지보수파일\20170118_NKRF_HEVATOTAL insert.xls
+- 실서버 빽업 
+- 연차
+       select * from H_YEAR_MASTER
+       where 1=1
+       and no_person = 'NKRF161001'
+              and yy_year = '2017'
+       
+       update H_YEAR_MASTER
+       set CNT_YEAR = '3.5'
+          , CNT_TOT = '3.5'
+          , CNT_SAVE = '3.5'
+          , CNT_MON_01 = '3.5'
+       where 1=1
+       and  no_person = 'NKRF161001'
+       and yy_year = '2017'
+
+              select * from H_YEAR_MASTER
+       where 1=1
+       and no_person = 'NKRF161002'
+                     and yy_year = '2017'
+       
+     update H_YEAR_MASTER
+       set CNT_YEAR = '3.5'
+          , CNT_TOT = '3.5'
+          , CNT_SAVE = '3.5'
+          , CNT_MON_01 = '3.5'
+       where 1=1
+       and  no_person = 'NKRF161002'
+       and yy_year = '2017'
+
+3.
+국제보건 연차
+- 입사일기준
+
+-- ROUND(Z.CNT_YEAR*Z.DAY/365)
+
+
+4. 
+가족수당 전체 테스트 완료
+=> 데이터 수정
+=> 아침에 오류 수정
+=> 테스트 요청
+
+
